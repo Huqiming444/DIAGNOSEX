@@ -1,0 +1,46 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---- 虚拟环境 ----
+.venv/
+venv/
+env/
+ENV/
+
+# ---- Streamlit ----
+.streamlit/secrets.toml
+
+# ---- 数据与输出 ----
+*.xlsx
+*.xls
+output/
+exports/
+*.log
+
+# ---- 编辑器 / 系统 ----
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 本项目：参赛与内部材料不入库 ----
+参赛材料/
+申报书*
+研究报告*
+答辩*
+*_备份*
+_备份_*
+
+# ---- 本机私有说明，不入库 ----
+_开源清单.md
+推送指南.md
