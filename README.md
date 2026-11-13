@@ -1,5 +1,12 @@
 # DIAGNOSEX
 
+[![CI](https://github.com/Huqiming444/DIAGNOSEX/actions/workflows/ci.yml/badge.svg)](https://github.com/Huqiming444/DIAGNOSEX/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.9%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.28%2B-FF4B4B.svg?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](#-快速开始)
+[![Data](https://img.shields.io/badge/data-68%20companies%20%C3%97%203%20years-4c9f70.svg)](#-数据说明)
+
 > 面向中医药企业的财务诊断工具
 > A financial diagnostic toolkit for TCM (traditional Chinese medicine) enterprises
 
@@ -149,6 +156,8 @@ DIAGNOSEX/
 ├── DIAGNOSEX_使用说明.txt                     # 完整使用说明
 ├── .streamlit/
 │   └── config.toml                           # 主题配置
+├── .github/
+│   └── workflows/ci.yml                      # 跨平台 CI（Win/macOS/Linux × Python 3.9/3.12）
 ├── docs/
 │   └── 界面_行业全景.png                      # 界面截图
 ├── LICENSE
@@ -168,6 +177,19 @@ DIAGNOSEX/
 | ST / \*ST 企业识别率 | **100%** | 6 家全部识别 |
 
 作为对照组，常用的均值 z-score 法与本项目方法评级一致率仅 57.4%，且呈现**系统性偏乐观**：把 40 家企业挤入"一般"档、0 家达到"良好"、漏报 4 家风险企业（含 1 家 ST）。这说明单纯用均值和标准差会抹平行业内部的结构性差异。
+
+---
+
+## 持续集成
+
+仓库配置了 GitHub Actions（`.github/workflows/ci.yml`），每次提交自动在 **Windows / macOS / Linux × Python 3.9 / 3.12** 六种组合上执行：
+
+1. 依赖安装（仅 `streamlit` + `pandas` + `plotly`）
+2. 主程序语法检查（`py_compile`）
+3. **数据完整性校验**：204 条记录、68 家公司、2023—2025 三年、关键字段齐全
+4. **应用启动冒烟测试**：真实拉起 Streamlit，确认 `http://localhost:8502` 返回 200
+
+也就是说，"Windows 和 Mac 都能跑"这句话是通过自动化验证的，不是口头承诺。
 
 ---
 
