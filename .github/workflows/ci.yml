@@ -10,6 +10,9 @@ jobs:
   smoke-test:
     name: ${{ matrix.os }} · Python ${{ matrix.python }}
     runs-on: ${{ matrix.os }}
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: utf-8
     strategy:
       fail-fast: false
       matrix:
@@ -38,7 +41,7 @@ jobs:
         run: |
           python - <<'PY'
           import pandas as pd
-          df = pd.read_csv("中药上市公司2023-2025年报财务数据.csv")
+          df = pd.read_csv("中药上市公司2023-2025年报财务数据.csv", encoding="utf-8-sig")
           required = ["代码", "名称", "年份", "营业收入(亿元)", "归母净利润(亿元)",
                       "毛利率(%)", "净利率(%)", "ROE(%)", "资产负债率(%)", "研发费用率(%)"]
           missing = [c for c in required if c not in df.columns]
