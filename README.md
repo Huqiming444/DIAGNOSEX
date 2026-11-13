@@ -86,14 +86,16 @@ DIAGNOSEX 的做法是：**不给你一个绝对分数，而是给你一个行�
 ### 方式二：完整版（含批量诊断与报告导出）
 
 ```bash
-git clone https://github.com/<your-name>/DIAGNOSEX.git
+git clone https://github.com/Huqiming444/DIAGNOSEX.git
 cd DIAGNOSEX
 
 pip install -r requirements.txt
 streamlit run DIAGNOSEX.py
 ```
 
-Windows 用户可以直接双击 `run_DIAGNOSEX.bat`，脚本会自动创建虚拟环境、安装依赖并启动，浏览器将自动打开 `http://localhost:8502`。
+Windows 用户双击 `run_DIAGNOSEX.bat`，macOS / Linux 用户运行 `bash run_DIAGNOSEX.sh`，脚本会自动创建虚拟环境、安装依赖并启动，浏览器将自动打开 `http://localhost:8502`。
+
+> macOS 首次运行若提示权限问题，先在终端执行 `chmod +x run_DIAGNOSEX.sh`。
 
 依赖仅三项：`streamlit`、`pandas`、`plotly`。
 
@@ -111,6 +113,13 @@ Windows 用户可以直接双击 `run_DIAGNOSEX.bat`，脚本会自动创建虚�
 | 企业详情 | 单家公司三年财务走势、六维度雷达、逐项指标行业分位 |
 | 行业全景 | 三年总量趋势、盈利中位数、亏损面、风险—回报散点 |
 | DIAGNOSE 诊断台 | 中小企业录入数据 → 评分 / 评级 / 改进建议 / 情景模拟 / 报告 |
+
+### 诊断结果导出（每家企业一份）
+
+- **一页纸诊断单**：诊断台单户 / 示例可导出 HTML 单页（A4 版式，浏览器 `Ctrl+P` 即可存为 PDF）与 Markdown；
+- **完整七章报告**：一键生成深度诊断报告 HTML；
+- **批量导出**：CSV 批量诊断后可打包下载全部单页（ZIP），也可逐家单独下载；
+- 企业详情页签中的每家上市公司同样支持导出自己的单页。导出示例见 `DIAGNOSEX_单文件版示例.html`。
 
 ---
 
@@ -130,11 +139,14 @@ Windows 用户可以直接双击 `run_DIAGNOSEX.bat`，脚本会自动创建虚�
 
 ```
 DIAGNOSEX/
-├── DIAGNOSEX.py                              # 主程序（Streamlit，约 1800 行）
+├── DIAGNOSEX.py                              # 主程序（Streamlit，约 1850 行）
 ├── DIAGNOSEX_单文件版.html                    # 零依赖离线单文件版
+├── DIAGNOSEX_单文件版示例.html                # 一页纸诊断报告导出示例
 ├── 中药上市公司2023-2025年报财务数据.csv        # 68 家 × 3 年 = 204 条公开年报数据
 ├── requirements.txt                          # streamlit / pandas / plotly
 ├── run_DIAGNOSEX.bat                         # Windows 一键启动
+├── run_DIAGNOSEX.sh                          # macOS / Linux 一键启动
+├── DIAGNOSEX_使用说明.txt                     # 完整使用说明
 ├── .streamlit/
 │   └── config.toml                           # 主题配置
 ├── docs/
