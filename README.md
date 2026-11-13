@@ -157,7 +157,7 @@ DIAGNOSEX/
 ├── .streamlit/
 │   └── config.toml                           # 主题配置
 ├── .github/
-│   └── workflows/ci.yml                      # 跨平台 CI（Win/macOS/Linux × Python 3.9/3.12）
+│   └── workflows/ci.yml                      # 跨平台 CI（Win/macOS/Linux × Python 3.10/3.12）
 ├── docs/
 │   └── 界面_行业全景.png                      # 界面截图
 ├── LICENSE
@@ -182,7 +182,7 @@ DIAGNOSEX/
 
 ## 持续集成
 
-仓库配置了 GitHub Actions（`.github/workflows/ci.yml`），每次提交自动在 **Windows / macOS / Linux × Python 3.9 / 3.12** 六种组合上执行：
+仓库配置了 GitHub Actions（`.github/workflows/ci.yml`），每次提交自动在 **Windows / macOS / Linux × Python 3.10 / 3.12** 六种组合上执行：
 
 1. 依赖安装（仅 `streamlit` + `pandas` + `plotly`）
 2. 主程序语法检查（`py_compile`）
