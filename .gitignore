@@ -1,0 +1,24 @@
+# 虚拟环境（Windows 与 macOS/Linux 结构不同，一并忽略）
+.venv/
+venv/
+env/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 临时/输出文件
+*.zip
+~$*
+output/
+*.log
